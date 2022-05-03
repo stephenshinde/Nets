@@ -29,22 +29,22 @@ public class ConfigFileReader {
 		}		
 	}
 	
-	public String getDriverPath(){
-		String driverPath = properties.getProperty("driverPath");
-		if(driverPath!= null) return driverPath;
-		else throw new RuntimeException("driverPath not specified in the configFIle.properties file.");		
+	public String getBaseURI() {
+		String URI = properties.getProperty("URI");
+		if(URI != null) return URI;
+		else throw new RuntimeException("URI not specified in the configFIle.properties file.");
 	}
 	
-	public long getImplicitlyWait() {		
-		String implicitlyWait = properties.getProperty("implicitlyWait");
-		if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
-		else throw new RuntimeException("implicitlyWait not specified in the configFIle.properties file.");		
+	public String getResourcePath() {
+		String ResourcePath = properties.getProperty("ResourcePath");
+		if(ResourcePath != null) return ResourcePath;
+		else throw new RuntimeException("ResourcePath not specified in the configFIle.properties file.");
 	}
 	
-	public String getApplicationUrl() {
-		String url = properties.getProperty("URL");
-		if(url != null) return url;
-		else throw new RuntimeException("url not specified in the configFIle.properties file.");
+	public String getInvalidURIResourcePath() {
+		String InvalidURIResourcePath = properties.getProperty("InvalidURIResourcePath");
+		if(InvalidURIResourcePath != null) return InvalidURIResourcePath;
+		else throw new RuntimeException("InvalidURIResourcePath not specified in the configFIle.properties file.");
 	}
 	
 	public String getExtentReportPath(){
@@ -59,52 +59,5 @@ public class ConfigFileReader {
 		else throw new RuntimeException("extent config path is not specified in the configFIle.properties file.");		
 	}
 	
-	public String getSaucePageTitle() {
-		String saucePageTitle = properties.getProperty("saucePageTitle");
-		if(saucePageTitle != null) return saucePageTitle;
-		else throw new RuntimeException("saucePageTitle not specified in the configFIle.properties file.");
-	}
 	
-	public String getFirstName() {
-		String firstName = properties.getProperty("firstName");
-		if(firstName != null) return firstName;
-		else throw new RuntimeException("firstName not specified in the configFIle.properties file.");
-	}
-	
-	public String getloginPassword() {
-		String loginPassword = properties.getProperty("loginPassword");
-		if(loginPassword != null) return loginPassword;
-		else throw new RuntimeException("loginPassword not specified in the configFIle.properties file.");
-	}
-	
-	public String getlastName() {
-		String lastName = properties.getProperty("lastName");
-		if(lastName != null) return lastName;
-		else throw new RuntimeException("lastName not specified in the configFIle.properties file.");
-	}
-	
-	public String getZip() {
-		String Zip = properties.getProperty("Zip");
-		if(Zip != null) return Zip;
-		else throw new RuntimeException("Zip not specified in the configFIle.properties file.");
-	}
-	
-	public String getstandardUsername() {
-		String standardUsername = properties.getProperty("standardUsername");
-		if(standardUsername != null) return standardUsername;
-		else throw new RuntimeException("standardUsername not specified in the configFIle.properties file.");
-	}
-	
-	public String getlockedUsername() {
-		String lockedUsername = properties.getProperty("lockedUsername");
-		if(lockedUsername != null) return lockedUsername;
-		else throw new RuntimeException("lockedUsername not specified in the configFIle.properties file.");
-	}
-
-	public String getLockedUserError() {
-		String lockedUserError = properties.getProperty("lockedUserError");
-		if(lockedUserError != null) return lockedUserError;
-		else throw new RuntimeException("lockedUserError not specified in the configFIle.properties file.");
-	}
-
 }

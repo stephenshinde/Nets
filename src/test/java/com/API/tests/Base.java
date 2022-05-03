@@ -2,14 +2,17 @@ package com.API.tests;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import com.automation.helpers.ConfigFileReader;
 import com.automation.helpers.ReportHelper;
 
 import io.restassured.RestAssured;
 
 public class Base {
 	String projectpath=System.getProperty("user.dir");
+	public ConfigFileReader reader = new ConfigFileReader();
 	
 	@BeforeClass
 	public void initializeSetting() {
@@ -17,10 +20,10 @@ public class Base {
 		ReportHelper.startExtentReport(projectpath+ "/Reports/APIreport.html");
 
 	}
-	@BeforeTest
+	@BeforeMethod
 	public void init() {
 		
-		RestAssured.baseURI = "https://relay-candidate.proxy.beeceptor.com/";
+		RestAssured.baseURI = reader.getBaseURI();
 	}
 	
 	@AfterClass

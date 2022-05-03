@@ -2,6 +2,7 @@ package com.Utility.API;
 
 import java.util.List;
 
+/*Pojo Class*/
 public class Payouts {
 	
 	private String id ;
